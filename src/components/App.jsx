@@ -1,7 +1,8 @@
 import { useState } from 'react'
 import "../styles/App.css"
 import Layout from './Layout'
-import Home from './pages/Home'
+// import Home from './pages/Home'
+import Signup from './pages/Signup'
 
 
 
@@ -13,7 +14,8 @@ function App() {
     
         <Layout>
           
-          <Home className= "mt-20"></Home>
+          {/* <Home className= "mt-20"></Home> */}
+          <Signup></Signup>
         </Layout>
         
     </div>

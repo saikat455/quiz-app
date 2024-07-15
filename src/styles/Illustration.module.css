@@ -1,0 +1,31 @@
+/* .illustration {
+    padding: 5rem 2rem;
+  }
+  
+  .illustration img {
+    max-width: 70%;
+  }
+  
+  @media only screen and (max-width: 1023px) {
+    .illustration {
+      display: none;
+    }
+  } */
+
+  .illustration {
+    padding: 5rem 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .illustration img {
+    max-width: 70%;
+  }
+  
+  @media only screen and (max-width: 1023px) {
+    .illustration {
+      display: none;
+    }
+  }
+  
