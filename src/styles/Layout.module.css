@@ -1,0 +1,11 @@
+.main {
+    width: 100%;
+    padding-top: 70px;
+    padding: 4rem 0;
+  }
+  
+  .container {
+    width: 90%;
+    margin: 2rem auto;
+    padding: 20px;
+  }
