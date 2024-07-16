@@ -1,0 +1,27 @@
+.quiz-container {
+    width: calc(100vw - 100px);
+    padding: 2rem;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 1rem auto;
+  }
+  
+  .quiz-container h1, .quiz-container h4 {
+    text-align: center;
+  }
+  
+  .quiz-container h1 {
+    margin-bottom: 1rem;
+  }
+  
+  .quiz-container h4 {
+    margin-bottom: 2rem;
+  }
+  
+  @media only screen and (max-width: 1024px) {
+    .quiz-container {
+      width: calc(100vw - 60px);
+    }
+  }
+  
