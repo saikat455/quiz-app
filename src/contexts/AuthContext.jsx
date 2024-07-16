@@ -1,10 +1,7 @@
-
-
-
 // src/contexts/AuthContext.jsx
 import { createContext, useContext, useEffect, useState } from "react";
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from "firebase/auth";
-import { auth } from "../firebase"; // Adjust the path based on your file structure
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile, signOut } from "firebase/auth";
+import { auth } from "../firebase"; 
 
 const AuthContext = createContext();
 
@@ -17,7 +14,6 @@ export function AuthProvider({ children }) {
 
   async function signup(email, password, username) {
     const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-    // updateProfile imported separately
     await updateProfile(userCredential.user, {
       displayName: username,
     });
@@ -26,6 +22,10 @@ export function AuthProvider({ children }) {
 
   function login(email, password) {
     return signInWithEmailAndPassword(auth, email, password);
+  }
+
+  function logout() {
+    return signOut(auth); 
   }
 
   useEffect(() => {
@@ -40,6 +40,7 @@ export function AuthProvider({ children }) {
     currentUser,
     signup,
     login,
+    logout, 
   };
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
