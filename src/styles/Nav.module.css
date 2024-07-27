@@ -63,6 +63,6 @@
   gap: 0.5rem;
 }
 
-.account > span:last-child {
+.accountInfo .material-icons-outlined {
   cursor: pointer;
 }

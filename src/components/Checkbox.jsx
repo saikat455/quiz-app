@@ -1,5 +1,3 @@
-
-
 const Checkbox = ({ className, text, ...rest }) => {
     return (
         <label className={className}>

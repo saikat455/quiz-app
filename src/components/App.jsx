@@ -1,38 +1,4 @@
-// import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
-// import { AuthProvider } from "../contexts/AuthContext";
-// import "../styles/App.css";
-// import Layout from "./Layout";
-// import Home from "./pages/Home";
-// import Login from "./pages/Login";
-// import Quiz from "./pages/Quiz";
-// import Result from "./pages/Result";
-// import Signup from "./pages/Signup";
-// import PrivateRoute from "./PrivateRoute";
-
-// function App() {
-//   return (
-//     <div className="App">
-//       <Router>
-//         <AuthProvider>
-//           <Layout>
-//             <Routes>
-//               <Route exact path="/" element={<Home />} />
-//               <Route exact path="/signup" element={<Signup />} />
-//               <Route exact path="/login" element={<Login />} />
-//               <PrivateRoute exact path="/quiz" element={<Quiz />} />
-//               <PrivateRoute exact path="/result" element={<Result />} />
-//             </Routes>
-//           </Layout>
-//         </AuthProvider>
-//       </Router>
-//     </div>
-//   );
-// }
-
-// export default App;
-
-// App.jsx
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import { AuthProvider } from "../contexts/AuthContext";
 import "../styles/App.css";
 import Layout from "./Layout";
@@ -42,6 +8,7 @@ import Quiz from "./pages/Quiz";
 import Result from "./pages/Result";
 import Signup from "./pages/Signup";
 import PrivateRoute from "./PrivateRoute";
+import PublicRoute from "./PublicRoute";
 
 function App() {
   return (
@@ -51,10 +18,24 @@ function App() {
           <Layout>
             <Routes>
               <Route path="/" element={<Home />} />
-              <Route path="/signup" element={<Signup />} />
-              <Route path="/login" element={<Login />} />
               <Route
-                path="/quiz"
+                path="/signup"
+                element={
+                  <PublicRoute>
+                    <Signup />
+                  </PublicRoute>
+                }
+              />
+              <Route
+                path="/login"
+                element={
+                  <PublicRoute>
+                    <Login />
+                  </PublicRoute>
+                }
+              />
+              <Route
+                path="/quiz/:id"
                 element={
                   <PrivateRoute>
                     <Quiz />
@@ -62,7 +43,7 @@ function App() {
                 }
               />
               <Route
-                path="/result"
+                path="/results/:id"
                 element={
                   <PrivateRoute>
                     <Result />

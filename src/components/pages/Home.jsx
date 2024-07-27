@@ -1,9 +1,9 @@
-import Videos from "../Videos";
+import Photos from "../Photos";
 
 
 const Home = () => {
     return (
-        <Videos/>
+        <Photos/>
     );
 };
 

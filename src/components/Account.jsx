@@ -1,4 +1,3 @@
-// Account.jsx
 import classNames from "../styles/Nav.module.css";
 import { Link } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
@@ -17,7 +16,7 @@ const Account = () => {
           <span
             className="material-icons-outlined"
             title="Logout"
-            onClick={() => logout()} 
+            onClick={logout} 
           >
             logout
           </span>
@@ -25,7 +24,7 @@ const Account = () => {
       ) : (
         <>
           <Link to="/signup" style={{ fontWeight: 500 , fontSize: 'medium'}}>Signup</Link>
-          <Link to="/login" style={{ marginLeft: '10px',fontWeight: 500 ,fontSize: 'medium' }}>Login</Link>
+          <Link to="/login" style={{ marginLeft: '10px', fontWeight: 500 , fontSize: 'medium' }}>Login</Link>
         </>
       )}
     </div>

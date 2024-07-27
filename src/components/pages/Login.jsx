@@ -1,8 +1,7 @@
-// import Form from "../Form";
+
 import Illustration from "../Illustration";
 import classNames from "../../styles/Login.module.css";
-// import TextInput from "../TextInput";
-// import Button from "../Button";
+
 import LoginForm from "../LoginForm";
 
 const Login = () => {
